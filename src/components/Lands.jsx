@@ -7,7 +7,7 @@ function LandsList() {
 
     useEffect(() => {
         //enter the backend api here
-        axios.get('api/lands').then((response) => {
+        axios.get('http://127.0.0.1:3000/lands').then((response) => {
         setLands(response.data);
         });
     }, []);
