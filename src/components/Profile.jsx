@@ -48,7 +48,5 @@ const { current_user, logout } = useContext(AuthContext);
             </div>
         </body>
     </div>
-  
-
   )
 }
