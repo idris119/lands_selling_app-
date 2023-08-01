@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SearchComponent.css'; 
 
 const SearchComponent = () => {
   const databases = [
@@ -28,30 +29,50 @@ const SearchComponent = () => {
       console.error('Error searching:', error);
     }
   };
+  // Define the placeholder based on the selected database
+  let placeholderText = '';
+  switch (selectedDatabase) {
+    case 'houses':
+      placeholderText = 'Search houses...';
+      break;
+    case 'vehicles':
+      placeholderText = 'Enter, Make, Model or Year...';
+      break;
+    case 'land':
+      placeholderText = 'Search land...';
+      break;
+    default:
+      placeholderText = 'Enter your search query...';
+  }
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="searchBar">
         <input
           type="text"
-          placeholder="Enter your search query..."
+          placeholder={placeholderText}
           value={searchQuery}
           onChange={handleSearchQueryChange}
+          className="input"
         />
-        <select value={selectedDatabase} onChange={handleDatabaseChange}>
+        <select value={selectedDatabase} onChange={handleDatabaseChange} className="select">
           {databases.map((database) => (
             <option key={database.value} value={database.value}>
               {database.name}
             </option>
           ))}
         </select>
-        <button onClick={handleSearch}>Search</button>
+        <button onClick={handleSearch} className="button">
+          Search
+        </button>
       </div>
       <div>
-        <h2>Search Results</h2>
-        <ul>
+        <h2 className="heading">Search Results</h2>
+        <ul className="results">
           {searchResults.map((result) => (
-            <li key={result.id}>{result.name}</li>
+            <li key={result.id} className="resultItem">
+              {result.name}
+            </li>
           ))}
         </ul>
       </div>
