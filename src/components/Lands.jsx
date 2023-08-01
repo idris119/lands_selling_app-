@@ -6,6 +6,7 @@ function LandsList() {
     const [lands, setLands] = useState([]);
 
     useEffect(() => {
+        //enter the backend api here
         axios.get('api/lands').then((response) => {
         setLands(response.data);
         });
