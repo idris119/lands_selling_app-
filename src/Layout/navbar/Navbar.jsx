@@ -31,8 +31,6 @@ export default function Navbar() {
                                 <a className="nav-link active dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
                                 <ul className="dropdown-menu bg-success">
                                     <li><Link to="/Profile" className="dropdown-item text-white" href="#">Profile</Link></li>
-                                    {/* If you had a logout functionality, you can add it here */}
-                                    {/* <li><a className="dropdown-item text-white" href='#' onClick={() => logout()}>logout</a></li> */}
                                 </ul>
                             </li>
                         </ul>
