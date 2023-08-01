@@ -61,7 +61,7 @@ export default function AuthProvider({children})
     // Register
     const register = (name, email, phone_number, password) =>{
         // Post this data to the backend
-        fetch("http://127.0.0.1:3000/users",{
+        fetch("/users",{
             method: "POST",
             headers:{"Content-Type": "application/json"},
             body: JSON.stringify({name, email, phone_number, password})
@@ -87,7 +87,7 @@ export default function AuthProvider({children})
 
     // Logout
     const logout = () =>{
-        fetch("http://127.0.0.1:3000/logout",{
+        fetch("/logout",{
             method: "DELETE",
 
         })
@@ -108,7 +108,7 @@ export default function AuthProvider({children})
    
     // check current user
     useEffect(()=>{
-        fetch("http://127.0.0.1:3000/current_user",{
+        fetch("/current_user",{
             method: "GET",
         })
         .then(res=>res.json())
