@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/authcontext';
 
 function Login() {
@@ -40,6 +41,12 @@ function Login() {
               Login
             </button>
           </div>
+          <div className="my-5">
+          doesn't have an account?{' '}
+          <Link className="ml-4" to="/Register">
+            Signup
+          </Link>
+        </div>
         </form>
       </div>
     </div>

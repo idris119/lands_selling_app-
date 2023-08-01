@@ -1,23 +1,41 @@
 import React, { useContext, useState } from 'react';
-import { AuthContext } from '../Context/AuthContext';
+import { AuthContext } from '../context/authcontext';
 import { Link } from 'react-router-dom';
 
 export default function Register() {
   const { register } = useContext(AuthContext);
 
+  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
+ 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email + '  ' + password);
-    register(email, password);
+    console.log(name, email, phoneNumber, password);
+    register(name, email, phoneNumber, password);
   };
 
   return (
     <div className="d-flex justify-content-center">
       <form onSubmit={handleSubmit} className="w-45 bg-white p-5 shadow-sm">
         <h1 className="font-semibold text-2xl my-6">SignUp</h1>
+
+        <div className="mb-3">
+          <label htmlFor="name" className="form-label font-weight-bold">
+            Your Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="form-control"
+            placeholder="Name"
+            required
+          />
+        </div>
 
         <div className="mb-3">
           <label htmlFor="email" className="form-label font-weight-bold">
@@ -30,6 +48,22 @@ export default function Register() {
             onChange={(e) => setEmail(e.target.value)}
             className="form-control"
             placeholder="Email"
+            required
+          />
+        </div>
+
+        
+        <div className="mb-3">
+          <label htmlFor="phone_number" className="form-label font-weight-bold">
+            Your Phone Number
+          </label>
+          <input
+            type="tel"
+            id="phone_number"
+            value={phoneNumber}
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            className="form-control"
+            placeholder="Phone Number"
             required
           />
         </div>
@@ -49,6 +83,7 @@ export default function Register() {
           />
         </div>
 
+
         <button
           type="submit"
           className="btn btn-primary btn-lg btn-block text-white"
@@ -59,7 +94,7 @@ export default function Register() {
 
         <div className="my-5">
           Already Registered?{' '}
-          <Link className="ml-4" to="/login">
+          <Link className="ml-4" to="/Login">
             Login
           </Link>
         </div>
