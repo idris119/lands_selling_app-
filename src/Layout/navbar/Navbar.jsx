@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css'
 
 export default function Navbar() {
     return (
@@ -19,6 +20,9 @@ export default function Navbar() {
                                 <Link to="/Properties" className="nav-link active text-white">Properties</Link>
                             </li>
                             <li className="nav-item">
+                                <Link to="/SearchComponent" className="nav-link active text-white">Search</Link>
+                            </li>
+                            <li className="nav-item">
                                 <Link to="/Payment" className="nav-link active text-white">Payment</Link>
                             </li>
                             <li className="nav-item">
@@ -26,6 +30,9 @@ export default function Navbar() {
                             </li>
                             <li className="nav-item">
                                 <Link to="/ApproveProperty" className="nav-link active text-white">Approve Property</Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/About us" className="nav-link active text-white">About us</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link active dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
