@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
 
+import React, { useState, useEffect } from 'react';
+import './House.css'
 const Houses = () => {
   const [houses, setHouses] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/houses')
+    fetch('http://localhost:3000/approvedhouses')
       .then((r) => r.json())
       .then((data) => setHouses(data));
   }, []);
