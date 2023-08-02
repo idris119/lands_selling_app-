@@ -19,21 +19,22 @@ export default function AuthProvider({children})
         .then((res)=>res.json())
         .then((response)=>{
             console.log(response)
-            if(response.error)
+            if(response.success)
             {
+                // nav("/")
                 Swal.fire(
-                    'Error',
-                    response.error,
-                    'error'
-                  )
-            }
-            else if(response.success)
-            { 
-                nav("/")
-                Swal.fire(
-                    'Success',
+                    'success',
                     response.success,
                     'success'
+                  )
+            }
+            else if(response.error)
+            { 
+                
+                Swal.fire(
+                    'error',
+                    response.error,
+                    'error'
                   )
                   setonChange(!onChange)
             }
