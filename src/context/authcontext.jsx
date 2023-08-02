@@ -10,31 +10,30 @@ export default function AuthProvider({children})
     const [current_user, setCurrentUser] = useState([])
     const [onChange, setonChange] = useState(true)
     // Login
-    const login = (name, password) =>{
+    const login = (email, password) =>{
         fetch("/login", {
             method: "POST",
             headers: {"Content-Type":"application/json"},
-            body: JSON.stringify({name, password})
+            body: JSON.stringify({email, password})
         })
         .then((res)=>res.json())
         .then((response)=>{
             console.log(response)
-            if(response.success)
+            if(response.error)
             {
-                // nav("/")
-                Swal.fire(
-                    'success',
-                    response.success,
-                    'success'
-                  )
-            }
-            else if(response.error)
-            { 
-                
                 Swal.fire(
                     'error',
                     response.error,
                     'error'
+                  )
+            }
+            else if(response.success)
+            { 
+                nav("/")
+                Swal.fire(
+                    'success',
+                    response.success,
+                    'success'
                   )
                   setonChange(!onChange)
             }
@@ -126,7 +125,7 @@ export default function AuthProvider({children})
     }
 
     useEffect(()=>{
-        console.log("Error")
+        console.log("Fetching current user data")
         fetch("/current_user")
         .then((res)=>res.json())
         .then((response)=>{
