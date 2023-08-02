@@ -329,82 +329,106 @@ const Addproperty = () => {
     </div>
        </div>
         )}
+{selectedPropertyType === 'vehicles' && (
+  <div>
+    <div className="mb-3">
+      <label htmlFor="vehicle_type" className="form-label">Vehicle Type:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="vehicle_type"
+        name="vehicle_type"
+        value={formData.vehicle_type}
+        onChange={handleFormChange}
+      />
+    </div>
 
-         {selectedPropertyType === 'vehicles' && (
-          <div>
-            <label htmlFor="vehicle_type">Vehicle Type:</label>
-            <input
-              type="text"
-              id="vehicle_type"
-              name="vehicle_type"
-              value={formData.vehicle_type}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="make" className="form-label">Make:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="make"
+        name="make"
+        value={formData.make}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="make">Make:</label>
-            <input
-              type="text"
-              id="make"
-              name="make"
-              value={formData.make}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="model" className="form-label">Model:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="model"
+        name="model"
+        value={formData.model}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="model">Model:</label>
-            <input
-              type="text"
-              id="model"
-              name="model"
-              value={formData.model}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="colour" className="form-label">Colour:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="colour"
+        name="colour"
+        value={formData.colour}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="colour">Colour:</label>
-            <input
-              type="text"
-              id="colour"
-              name="colour"
-              value={formData.colour}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="capacity" className="form-label">Capacity:</label>
+      <input
+        type="number"
+        className="form-control"
+        id="capacity"
+        name="capacity"
+        value={formData.capacity}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="capacity">Capacity:</label>
-            <input
-              type="number"
-              id="capacity"
-              name="capacity"
-              value={formData.capacity}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="price" className="form-label">Price:</label>
+      <input
+        type="number"
+        className="form-control"
+        id="price"
+        name="price"
+        value={formData.price}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="price">Price:</label>
-            <input
-              type="number"
-              id="price"
-              name="price"
-              value={formData.price}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="image" className="form-label">Image:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="image"
+        name="image"
+        value={formData.image}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="image">Image:</label>
-            <input
-              type="text"
-              id="image"
-              name="image"
-              value={formData.image}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3 form-check">
+      <input
+        type="checkbox"
+        className="form-check-input"
+        id="is_approved"
+        name="is_approved"
+        checked={formData.is_approved}
+        onChange={handleFormChange}
+      />
+      <label htmlFor="is_approved" className="form-check-label">Is Approved:</label>
+    </div>
+  </div>
+)}
 
-            <label htmlFor="is_approved">Is Approved:</label>
-            <input
-              type="checkbox"
-              id="is_approved"
-              name="is_approved"
-              checked={formData.is_approved}
-              onChange={handleFormChange}
-            />
-          </div>
-        )}
         <button type="submit">Add Property</button>
       </form>
     </div>
