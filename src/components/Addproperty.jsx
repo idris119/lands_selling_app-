@@ -164,6 +164,11 @@ const Addproperty = () => {
             />
           </div>
         )}
+         {selectedPropertyType === 'houses' && (
+          <div>
+            {/* House-specific fields */}
+          </div>
+        )}
         {selectedPropertyType === 'lands' && (
           <div>
             <label htmlFor="name">Name:</label>
@@ -174,7 +179,87 @@ const Addproperty = () => {
               value={formData.name}
               onChange={handleFormChange}
             />
-            {/* Other land-specific fields */}
+
+            <label htmlFor="location">Location:</label>
+            <input
+              type="text"
+              id="location"
+              name="location"
+              value={formData.location}
+              onChange={handleFormChange}
+            />
+
+            <label htmlFor="size">Size:</label>
+            <input
+              type="number"
+              id="size"
+              name="size"
+              value={formData.size}
+              onChange={handleFormChange}
+            />
+
+            <label htmlFor="price">Price:</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              value={formData.price}
+              onChange={handleFormChange}
+            />
+
+            <label htmlFor="description">Description:</label>
+            <input
+              type="text"
+              id="description"
+              name="description"
+              value={formData.description}
+              onChange={handleFormChange}
+            />
+
+            <label htmlFor="amenities">Amenities:</label>
+            <input
+              type="text"
+              id="amenities"
+              name="amenities"
+              value={formData.amenities}
+              onChange={handleFormChange}
+            />
+
+            <label htmlFor="image">Image:</label>
+            <input
+              type="text"
+              id="image"
+              name="image"
+              value={formData.image}
+              onChange={handleFormChange}
+            />
+
+            <label htmlFor="proximity_to_road">Proximity to Road:</label>
+            <input
+              type="text"
+              id="proximity_to_road"
+              name="proximity_to_road"
+              value={formData.proximity_to_road}
+              onChange={handleFormChange}
+            />
+
+            <label htmlFor="messaging">Messaging:</label>
+            <input
+              type="checkbox"
+              id="messaging"
+              name="messaging"
+              checked={formData.messaging}
+              onChange={handleFormChange}
+            />
+
+            <label htmlFor="is_approved">Is Approved:</label>
+            <input
+              type="checkbox"
+              id="is_approved"
+              name="is_approved"
+              checked={formData.is_approved}
+              onChange={handleFormChange}
+            />
           </div>
         )}
         {selectedPropertyType === 'vehicles' && (
