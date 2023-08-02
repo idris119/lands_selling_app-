@@ -5,6 +5,7 @@ import { AuthContext } from '../context/authcontext';
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false); // New state for password visibility
 
   const { login } = useContext(AuthContext);
 
@@ -26,12 +27,21 @@ function Login() {
             placeholder='Enter Email'
           />
           <br />
-          <input
-            type='password'
-            onChange={(e) => setPassword(e.target.value)}
-            className='form-control rounded mt-2 px-3 py-1'
-            placeholder='Enter Password'
-          />
+          <div className='d-flex align-items-center'>
+            <input
+              type={showPassword ? 'text' : 'password'} // Toggle input type based on showPassword state
+              onChange={(e) => setPassword(e.target.value)}
+              className='form-control rounded mt-2 px-3 py-1'
+              placeholder='Enter Password'
+            />
+            <button
+              type='button'
+              className='btn btn-link ml-2'
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? 'Hide' : 'Show'}
+            </button>
+          </div>
           <br />
           <div className='d-flex justify-content-center'>
             <button
@@ -42,11 +52,11 @@ function Login() {
             </button>
           </div>
           <div className="my-5">
-          doesn't have an account?{' '}
-          <Link className="ml-4" to="/Register">
-            Signup
-          </Link>
-        </div>
+            Doesn't have an account?{' '}
+            <Link className="ml-4" to="/Register">
+              Signup
+            </Link>
+          </div>
         </form>
       </div>
     </div>

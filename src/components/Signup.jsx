@@ -7,21 +7,21 @@ export default function Register() {
 
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [phone_number, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
- 
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(name, email, phoneNumber, password);
-    register(name, email, phoneNumber, password);
+    console.log(name + '  ' + email + '  ' + phone_number + '  ' + password);
+    register(name, email, phone_number, password);
   };
 
   return (
     <div className="d-flex justify-content-center">
       <form onSubmit={handleSubmit} className="w-45 bg-white p-5 shadow-sm">
-        <h1 className="font-semibold text-2xl my-6">SignUp</h1>
+        <h1 className="font-semibold text-2xl my-6">Sign Up</h1>
 
+        {/* Name Input */}
         <div className="mb-3">
           <label htmlFor="name" className="form-label font-weight-bold">
             Your Name
@@ -37,6 +37,7 @@ export default function Register() {
           />
         </div>
 
+        {/* Email Input */}
         <div className="mb-3">
           <label htmlFor="email" className="form-label font-weight-bold">
             Your Email
@@ -52,15 +53,15 @@ export default function Register() {
           />
         </div>
 
-        
+        {/* Phone Number Input */}
         <div className="mb-3">
           <label htmlFor="phone_number" className="form-label font-weight-bold">
-            Your Phone Number
+            Phone Number
           </label>
           <input
             type="tel"
             id="phone_number"
-            value={phoneNumber}
+            value={phone_number}
             onChange={(e) => setPhoneNumber(e.target.value)}
             className="form-control"
             placeholder="Phone Number"
@@ -68,6 +69,7 @@ export default function Register() {
           />
         </div>
 
+        {/* Password Input */}
         <div className="mb-3">
           <label htmlFor="password" className="form-label font-weight-bold">
             Your Password
@@ -83,7 +85,7 @@ export default function Register() {
           />
         </div>
 
-
+        {/* Submit Button */}
         <button
           type="submit"
           className="btn btn-primary btn-lg btn-block text-white"
@@ -92,9 +94,10 @@ export default function Register() {
           Sign up
         </button>
 
+        {/* Login Link */}
         <div className="my-5">
           Already Registered?{' '}
-          <Link className="ml-4" to="/Login">
+          <Link className="ml-4" to="/login">
             Login
           </Link>
         </div>
