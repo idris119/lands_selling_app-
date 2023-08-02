@@ -207,98 +207,129 @@ const Addproperty = () => {
         )}
         
         {selectedPropertyType === 'lands' && (
-          <div>
-            <label htmlFor="name">Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleFormChange}
-            />
+  <div>
+    <div className="mb-3">
+      <label htmlFor="name" className="form-label">Name:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="name"
+        name="name"
+        value={formData.name}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="location">Location:</label>
-            <input
-              type="text"
-              id="location"
-              name="location"
-              value={formData.location}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="location" className="form-label">Location:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="location"
+        name="location"
+        value={formData.location}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="size">Size:</label>
-            <input
-              type="number"
-              id="size"
-              name="size"
-              value={formData.size}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="size" className="form-label">Size:</label>
+      <input
+        type="number"
+        className="form-control"
+        id="size"
+        name="size"
+        value={formData.size}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="price">Price:</label>
-            <input
-              type="number"
-              id="price"
-              name="price"
-              value={formData.price}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="price" className="form-label">Price:</label>
+      <input
+        type="number"
+        className="form-control"
+        id="price"
+        name="price"
+        value={formData.price}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="description">Description:</label>
-            <input
-              type="text"
-              id="description"
-              name="description"
-              value={formData.description}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="description" className="form-label">Description:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="description"
+        name="description"
+        value={formData.description}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="amenities">Amenities:</label>
-            <input
-              type="text"
-              id="amenities"
-              name="amenities"
-              value={formData.amenities}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="amenities" className="form-label">Amenities:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="amenities"
+        name="amenities"
+        value={formData.amenities}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="image">Image:</label>
-            <input
-              type="text"
-              id="image"
-              name="image"
-              value={formData.image}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="image" className="form-label">Image:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="image"
+        name="image"
+        value={formData.image}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="proximity_to_road">Proximity to Road:</label>
-            <input
-              type="text"
-              id="proximity_to_road"
-              name="proximity_to_road"
-              value={formData.proximity_to_road}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3">
+      <label htmlFor="proximity_to_road" className="form-label">Proximity to Road:</label>
+      <input
+        type="text"
+        className="form-control"
+        id="proximity_to_road"
+        name="proximity_to_road"
+        value={formData.proximity_to_road}
+        onChange={handleFormChange}
+      />
+    </div>
 
-            <label htmlFor="messaging">Messaging:</label>
-            <input
-              type="checkbox"
-              id="messaging"
-              name="messaging"
-              checked={formData.messaging}
-              onChange={handleFormChange}
-            />
+    <div className="mb-3 form-check">
+      <input
+        type="checkbox"
+        className="form-check-input"
+        id="messaging"
+        name="messaging"
+        checked={formData.messaging}
+        onChange={handleFormChange}
+      />
+      <label htmlFor="messaging" className="form-check-label">Messaging:</label>
+    </div>
 
-            <label htmlFor="is_approved">Is Approved:</label>
-            <input
-              type="checkbox"
-              id="is_approved"
-              name="is_approved"
-              checked={formData.is_approved}
-              onChange={handleFormChange}
-            />
-          </div>
+    <div className="mb-3 form-check">
+      <input
+        type="checkbox"
+        className="form-check-input"
+        id="is_approved"
+        name="is_approved"
+        checked={formData.is_approved}
+        onChange={handleFormChange}
+      />
+      <label htmlFor="is_approved" className="form-check-label">Is Approved:</label>
+    </div>
+       </div>
         )}
+
          {selectedPropertyType === 'vehicles' && (
           <div>
             <label htmlFor="vehicle_type">Vehicle Type:</label>
