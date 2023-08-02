@@ -15,6 +15,13 @@ const Addproperty = () => {
     image: '',
     proximity_to_road: '',
     messaging: false,
+    name: '',
+    vehicle_type: '',
+    make: '',
+    model: '',
+    colour: '',
+    capacity: '',
+    is_approved: false,
   });
 
   const handlePropertyTypeChange = (e) => {
