@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 
@@ -17,8 +18,12 @@ export default function Navbar() {
                                 <Link to="/Home" className="nav-link active text-white" aria-current="page">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/Properties" className="nav-link active text-white">Properties</Link>
-                            </li>
+        <NavDropdown title="Properties" id="properties-dropdown" className="nav-link">
+          <Link to="/Properties/Vehicles" className="dropdown-item">Vehicles</Link>
+          <Link to="/Properties/Lands" className="dropdown-item">Lands</Link>
+          <Link to="/Properties/House" className="dropdown-item">House</Link>
+        </NavDropdown>
+      </li>
                             <li className="nav-item">
                                 <Link to="/SearchComponent" className="nav-link active text-white">Search</Link>
                             </li>

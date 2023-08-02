@@ -5,7 +5,7 @@ const Vehicles = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/vehicles')
+    fetch('/approvedvehicles')
       .then((r) => r.json())
       .then((data) => setVehicles(data))
       .catch((error) => setError(error.message)); 
