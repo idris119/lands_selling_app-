@@ -26,6 +26,7 @@ export default function Register() {
           <label htmlFor="name" className="form-label font-weight-bold">
             Your Name
           </label>
+          <div className='input-group'>
           <input
             type="text"
             id="name"
@@ -35,6 +36,7 @@ export default function Register() {
             placeholder="Name"
             required
           />
+          </div>
         </div>
 
         {/* Email Input */}
@@ -42,6 +44,7 @@ export default function Register() {
           <label htmlFor="email" className="form-label font-weight-bold">
             Your Email
           </label>
+          <div className='input-group'>
           <input
             type="email"
             id="email"
@@ -51,6 +54,7 @@ export default function Register() {
             placeholder="Email"
             required
           />
+          </div>
         </div>
 
         {/* Phone Number Input */}
@@ -58,6 +62,7 @@ export default function Register() {
           <label htmlFor="phone_number" className="form-label font-weight-bold">
             Phone Number
           </label>
+          <div className='input-group'>
           <input
             type="tel"
             id="phone_number"
@@ -67,6 +72,7 @@ export default function Register() {
             placeholder="Phone Number"
             required
           />
+          </div>
         </div>
 
         {/* Password Input */}
@@ -74,6 +80,7 @@ export default function Register() {
           <label htmlFor="password" className="form-label font-weight-bold">
             Your Password
           </label>
+          <div className='input-group'>
           <input
             type="password"
             id="password"
@@ -83,6 +90,7 @@ export default function Register() {
             placeholder="Password"
             required
           />
+          </div>
         </div>
 
         {/* Submit Button */}
