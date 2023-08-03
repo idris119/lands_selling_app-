@@ -9,10 +9,12 @@ import Addproperty from './components/Addproperty';
 import Approveproperties from './components/Approveproperties';
 import Aboutus from './components/Aboutus' 
 import Vehicles from './components/vehicles/Vehicles';
+import AuthProvider from './context/authcontext'
 
 
 function App() {
   return (
+    <AuthProvider>
     <Router>
       <div>
         <Navbar />
@@ -28,6 +30,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </AuthProvider>
   );
 }
 
