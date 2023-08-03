@@ -10,7 +10,7 @@ import Approveproperties from './components/Approveproperties';
 import Aboutus from './components/Aboutus' 
 import Vehicles from './components/vehicles/Vehicles';
 import AuthProvider from './context/authcontext'
-
+import Footer from './Layout/Footer';
 function App() {
   return (
     
@@ -32,7 +32,7 @@ function App() {
 
 
         </Routes>
-        
+        <Footer/>
       </div>
       </AuthProvider>
     </Router>
