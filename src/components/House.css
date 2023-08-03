@@ -1,0 +1,37 @@
+/* Basic styling for the house list container */
+.house-list {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #143f13;
+  }
+  
+  /* Styling for each house item */
+  .house-item {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Styling for house details */
+  .house-item p {
+    margin: 5px;
+  }
+  
+  /* Highlighting for approved houses */
+  .house-item p.is-approved {
+    color: #388e3c; /* Green color for approved houses */
+  }
+  
+  /* Styling for house images */
+  .house-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  
