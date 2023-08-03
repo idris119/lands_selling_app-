@@ -2,20 +2,36 @@ import React, { useState, useEffect } from 'react';
 
 const Vehicles = () => {
   const [vehicles, setVehicles] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   useEffect(() => {
     fetch('/approvedvehicles')
-      .then((r) => r.json())
-      .then((data) => setVehicles(data))
-      .catch((error) => setError(error.message)); 
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log('Fetched vehicles data:', data); // Add this line to see the fetched data in the console
+        setVehicles(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error('Error occurred while fetching vehicles:', error); // Add this line to see any errors in the console
+        setError('Error occurred while fetching vehicles.');
+        setLoading(false);
+      });
   }, []);
-
+  
   return (
     <div>
       <h1>Vehicle List</h1>
-      {error ? (
-        <p>Error occurred while fetching vehicles: {error}</p>
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>{error}</p>
       ) : (
         <ul>
           {vehicles.map((vehicle) => (

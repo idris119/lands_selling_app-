@@ -8,6 +8,8 @@ import Payment from './components/Payment';
 import Addproperty from './components/Addproperty'; 
 import Approveproperties from './components/Approveproperties';
 import Aboutus from './components/Aboutus' 
+import Vehicles from './components/vehicles/Vehicles';
+
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/Addproperty" element={<Addproperty />} />
           <Route path="/Approveproperties" element={<Approveproperties />} />
           <Route path="/Aboutus" element={<Aboutus />} />
+          <Route path='/Vehicles' element={<Vehicles />} />
+
 
         </Routes>
       </div>

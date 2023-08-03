@@ -19,7 +19,7 @@ export default function Navbar() {
                             </li>
                             <li className="nav-item">
         <NavDropdown title="Properties" id="properties-dropdown" className="nav-link">
-          <Link to="/Properties/Vehicles" className="dropdown-item">Vehicles</Link>
+          <Link to="/Vehicles" className="dropdown-item">Vehicles</Link>
           <Link to="/Properties/Lands" className="dropdown-item">Lands</Link>
           <Link to="/Properties/House" className="dropdown-item">House</Link>
         </NavDropdown>
