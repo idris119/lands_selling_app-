@@ -1,13 +1,15 @@
 
 import React, { useState, useEffect } from 'react';
 import './House.css'
+
 const Houses = () => {
   const [houses, setHouses] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/approvedhouses')
+    fetch('/approvedhouses')
       .then((r) => r.json())
-      .then((data) => setHouses(data));
+      .then((data) => setHouses(data))
+      .catch((error) => console.error('Error fetching data:', error));
   }, []);
 
   return (
@@ -37,3 +39,5 @@ const Houses = () => {
 };
 
 export default Houses;
+
+

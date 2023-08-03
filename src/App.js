@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+
 import Houses from './components/Houses';
 
 function App() {
