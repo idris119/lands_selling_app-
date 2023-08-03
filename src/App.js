@@ -1,30 +1,36 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './Layout/navbar/Navbar';
+import Home from './components/Home'; 
+import Properties from './components/Properties'; 
+import SearchComponent from './components/SearchComponent'
+import Payment from './components/Payment';
+import Addproperty from './components/Addproperty'; 
+import Approveproperties from './components/Approveproperties';
+import Aboutus from './components/Aboutus' 
+import Vehicles from './components/vehicles/Vehicles';
 
-
-import AuthProvider from "./context/authcontext";
-import Login from "./components/Login";
-import Profile from "./components/Profile";
-import Register from "./components/Signup";
-// import Layout from "./Layout/layout";
 
 function App() {
-    return (
-  
-        <BrowserRouter>
-            <AuthProvider>
-            <Login/>
-            <Profile/>
-            <Register/>
-                {/* <Routes>
-                    <Route path="/" element={<Layout />}>
-                        
-                    <Route path="/Login" element={<Login />}/>
-                    </Route>
-                </Routes> */}
+  return (
+    <Router>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Properties" element={<Properties />} />
+          <Route path="/SearchComponent" element={<SearchComponent />} />
+          <Route path="/Payment" element={<Payment />} />
+          <Route path="/Addproperty" element={<Addproperty />} />
+          <Route path="/Approveproperties" element={<Approveproperties />} />
+          <Route path="/Aboutus" element={<Aboutus />} />
+          <Route path='/Vehicles' element={<Vehicles />} />
 
-            </AuthProvider>
-        </BrowserRouter>
-    )
+
+        </Routes>
+      </div>
+    </Router>
+  );
 }
 
 export default App
