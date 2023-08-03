@@ -7,10 +7,10 @@ function Footer() {
         <div className="footer-content">
             <div className="footer-left">
             {/* Company Motto */}
-            <p className="company-motto">Your Company Motto Goes Here</p>
+            <p className="company-motto">Your Property Solution At a Glance </p>
 
             {/* Contacts */}
-            <p className="contacts">Contact us: contact@example.com | Phone: +1 123-456-7890</p>
+            <p className="contacts">Contact us: propertysaleskenya@gmail.com | Phone: +25472000300412</p>
             </div>
 
             <div className="footer-right">
@@ -54,14 +54,6 @@ function Footer() {
                 className="social-link"
             >
                 TikTok
-            </a>
-            <a
-                href="https://www.yourthreadspage.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="social-link"
-            >
-                Threads
             </a>
             </div>
         </div>

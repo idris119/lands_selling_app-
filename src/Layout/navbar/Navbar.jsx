@@ -73,10 +73,11 @@ export default function Navbar() {
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                             <li className="nav-item">
                                 <Link to="/Home" className="nav-link active text-white" aria-current="page">Home</Link>
-                            </li>
+                             </li>
+
                             <li className="nav-item">
-                                <NavDropdown title="Properties" id="properties-dropdown" className="nav-link">
-                                    <Link to="/Vehicles" className="dropdown-item">Vehicles</Link>
+                                <NavDropdown title="Properties" id="properties-dropdown" className="nav-link active text-white">
+                                    <Link to="/Properties/Vehicles" className="dropdown-item">Vehicles</Link>
                                     <Link to="/Properties/Lands" className="dropdown-item">Lands</Link>
                                     <Link to="/Properties/House" className="dropdown-item">House</Link>
                                 </NavDropdown>
