@@ -56,12 +56,12 @@ function Footer() {
                 TikTok
             </a>
             <a
-                href="https://www.yourthreadpage.com"
+                href="https://www.yourthreadspage.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-link"
             >
-                Thread
+                Threads
             </a>
             </div>
         </div>
