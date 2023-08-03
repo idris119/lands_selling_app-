@@ -22,9 +22,12 @@ const SearchComponent = () => {
   //Will have to set up the search end-point in backend first
   const handleSearch = async () => {
     try {
-      const response = await fetch(`/api/search/${selectedDatabase}?q=${searchQuery}`);
+      const response = await fetch(`http://localhost:3000/${selectedDatabase}?q=${searchQuery}`);
       const data = await response.json();
       setSearchResults(data);
+      // Output the search results (data) to the console
+      console.log('Search Results:', data);
+
     } catch (error) {
       console.error('Error searching:', error);
     }
