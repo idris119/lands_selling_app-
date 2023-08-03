@@ -1,5 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './Layout/navbar/Navbar';
 import Home from './components/Home'; 
@@ -26,10 +25,7 @@ function App() {
           <Route path="/Approveproperties" element={<Approveproperties />} />
           <Route path="/Aboutus" element={<Aboutus />} />
           <Route path='/Vehicles' element={<Vehicles />} />
-
-
         </Routes>
-
       </div>
     </Router>
   );
