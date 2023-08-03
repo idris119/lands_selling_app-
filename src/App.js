@@ -8,9 +8,11 @@ import Payment from './components/Payment';
 import Addproperty from './components/Addproperty'; 
 import Approveproperties from './components/Approveproperties';
 import Aboutus from './components/Aboutus' 
-import Vehicles from './components/vehicles/Vehicles';
+import Vehicles from './components/Vehicles';
 import AuthProvider from './context/authcontext'
 import Footer from './Layout/Footer';
+import Houses from './components/Houses';
+import LandsList from './components/LandsList';
 function App() {
   return (
     
@@ -29,8 +31,11 @@ function App() {
           <Route path="/Approveproperties" element={<Approveproperties />} />
           <Route path="/Aboutus" element={<Aboutus />} />
           <Route path='/Vehicles' element={<Vehicles />} />
+          <Route path='/Houses' element={<Houses />} />
+          <Route path='/LandsList' element={<LandsList />} />
+          <Route path='/Properties' element={<Properties />} />
 
-
+        
         </Routes>
         <Footer/>
       </div>
