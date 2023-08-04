@@ -14,7 +14,7 @@ export default function Navbar() {
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
 
                             <li className="nav-item">
-                                <Link to="/Home" className="nav-link active text-white" aria-current="page">Home</Link>
+                                <Link to="/" className="nav-link active text-white" aria-current="page">Home</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <Link
@@ -62,7 +62,7 @@ export default function Navbar() {
                                     data-bs-toggle="dropdown"
                                     aria-expanded="false"
                                 >
-                                    Sign up
+                                    Have an account?
                                 </Link>
                                 <ul className="dropdown-menu bg-success">
                                     <li>
@@ -74,7 +74,7 @@ export default function Navbar() {
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link to="/Property" className="nav-link active text-white">Profile</Link>
+                                <Link to="/Profile" className="nav-link active text-white">Profile</Link>
                             </li>
                         </ul>
                     </div>

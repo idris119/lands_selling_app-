@@ -15,6 +15,7 @@ import Houses from './components/Houses';
 import Lands from './components/Lands';
 import Login from './components/Login';
 import Register from './components/Signup';
+import Profile from './components/Profile';
 function App() {
   return (
     
@@ -25,7 +26,7 @@ function App() {
       <div>
         <Navbar />
         <Routes>
-          <Route path="/Home" element={<Home />} />
+          <Route path="/" element={<Home />} />
           <Route path="/Properties" element={<Properties />} />
           <Route path="/SearchComponent" element={<SearchComponent />} />
           <Route path="/Payment" element={<Payment />} />
@@ -38,6 +39,8 @@ function App() {
           <Route path='/Properties' element={<Properties />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Register />} />
+          <Route path='/Profile' element={< Profile />} />
+
 
         
         </Routes>
