@@ -24,7 +24,9 @@ const Houses = () => {
             <p>Bathrooms: {house.bathrooms}</p>
             <p>Amenities: {house.amenities}</p>
             {/* Assuming house.images is an array of image URLs */}
-            <p>Images: {house.images.join(', ')}</p>
+            <p>Images: {Array.isArray(house.images) ? house.images.join(', ') : 'No images available'}</p>
+
+            {/* <p>Images: {house.images.join(', ')}</p> */}
             <p>Distance: {house.distance}</p>
             <p>Description: {house.description}</p>
             {/* Assuming house.image is the main image URL */}

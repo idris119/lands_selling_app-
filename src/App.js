@@ -13,6 +13,8 @@ import AuthProvider from './context/authcontext'
 import Footer from './Layout/Footer';
 import Houses from './components/Houses';
 import LandsList from './components/LandsList';
+import Login from './components/Login';
+import Register from './components/Signup';
 function App() {
   return (
     
@@ -34,6 +36,8 @@ function App() {
           <Route path='/Houses' element={<Houses />} />
           <Route path='/LandsList' element={<LandsList />} />
           <Route path='/Properties' element={<Properties />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Register />} />
 
         
         </Routes>
