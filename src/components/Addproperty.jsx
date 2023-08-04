@@ -56,10 +56,10 @@ const Addproperty = () => {
   };
 
   return (
-    <div className="container">
-<h1 className="text-center">Add Property</h1>
+    <div className="container mb-4 mt-4">
+      <h1 className="text-center">Add Property</h1>
       <form onSubmit={handleFormSubmit}>
-      <div className="mb-3">
+      <div className="d-flex justify-content-center" style={{ marginTop: '50px',marginBottom:'-20px' }}>
           <select
            className="form-select"
             id="propertyType"

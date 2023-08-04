@@ -12,7 +12,7 @@ const Houses = () => {
   }, []);
 
   return (
-    <div>
+    <div className="d-flex justify-content-center" style={{ marginTop: '20px' }}>
       <h1>House List</h1>
       <ul>
         {houses.map((house) => (

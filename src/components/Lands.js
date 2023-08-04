@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './LandsList.css'; // Import the CSS file
+import './Lands.css'; // Import the CSS file
 
-function LandsList() {
+function Lands() {
     const [lands, setLands] = useState([]);
 
     useEffect(() => {
@@ -39,4 +39,4 @@ function LandsList() {
     );
 }
 
-export default LandsList;
+export default Lands;

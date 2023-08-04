@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Vehicles from './Vehicles';
 import Houses from './Houses';
-import LandsList from './LandsList';
+import LandsList from './Lands';
 const Properties = () => {
   const [selectedOption, setSelectedOption] = useState(null);
 

@@ -17,7 +17,7 @@ export default function Register() {
   };
 
   return (
-    <div className="d-flex justify-content-center">
+    <div className="d-flex justify-content-center" style={{ marginTop: '20px' }}>
       <form onSubmit={handleSubmit} className="w-45 bg-white p-5 shadow-sm">
         <h1 className="font-semibold text-2xl my-6">Sign Up</h1>
 

@@ -12,7 +12,7 @@ import Vehicles from './components/Vehicles';
 import AuthProvider from './context/authcontext'
 import Footer from './Layout/Footer';
 import Houses from './components/Houses';
-import LandsList from './components/LandsList';
+import Lands from './components/Lands';
 import Login from './components/Login';
 import Register from './components/Signup';
 function App() {
@@ -34,7 +34,7 @@ function App() {
           <Route path="/Aboutus" element={<Aboutus />} />
           <Route path='/Vehicles' element={<Vehicles />} />
           <Route path='/Houses' element={<Houses />} />
-          <Route path='/LandsList' element={<LandsList />} />
+          <Route path='/Lands' element={<Lands />} />
           <Route path='/Properties' element={<Properties />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Register />} />
