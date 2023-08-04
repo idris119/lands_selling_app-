@@ -1,62 +1,46 @@
 import React from 'react';
 
 const HomePage = () => {
-  // Define your background image URL
-  const backgroundImageURL = 'https://cdn.xxl.thumbs.canstockphoto.com/property-mark-on-hand-with-blue-background-stock-photograph_csp29643092.jpg';
-
-  // Define your inline styles
-  const styles = {
-    container: {
-      backgroundImage: `url(${backgroundImageURL})`,
-      backgroundSize: 'cover',
-      backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat',
-      minHeight: '100vh', 
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontFamily: 'Arial, sans-serif', // Replace with your desired font family
-    },
-    content: {
-      margin: '20px',
-      padding: '20px',
-      borderRadius: '8px',
-      backgroundColor: 'rgba(255, 255, 255, 0.8)',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-      maxWidth: '500px', // Limit the width to make it more readable on larger screens
-      textAlign: 'center', // Center the content inside the container
-    },
-    heading: {
-      fontSize: '40px',
-      color: 'navy',
-      textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',
-      marginBottom: '20px', // Add some space below the heading
-    },
-    button: {
-      padding: '10px 20px',
-      fontSize: '18px',
-      color: '#fff',
-      backgroundColor: 'navy',
-      border: 'none',
-      borderRadius: '4px',
-      cursor: 'pointer',
-      boxShadow: '0 2px 4px rgba(0, 0, 0, 0.2)',
-      transition: 'background-color 0.2s ease',
-    },
-  };
-
   return (
-    <div style={styles.container}>
-      <div style={styles.content}>
-        <h1 style={styles.heading}>Welcome to the Property Selling App</h1>
-        <p>
-          This is a platform where you can buy and sell properties easily. 
-          Sign up now to get started!
-        </p>
-      
+    <div id="carouselExampleCaptions" className="carousel slide">
+  <div className="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div className="carousel-inner">
+    <div className="carousel-item active">
+      <img src="https://cdn.xxl.thumbs.canstockphoto.com/property-mark-on-hand-with-blue-background-stock-photograph_csp29643092.jpg" className="d-block w-100" alt="..." />
+      <div className="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Some representative placeholder content for the first slide.</p>
       </div>
     </div>
+    <div className="carousel-item">
+      <img src="https://cdn.xxl.thumbs.canstockphoto.com/property-mark-on-hand-with-blue-background-stock-photograph_csp29643092.jpg" className="d-block w-100" alt="..." />
+      <div className="carousel-caption d-none d-md-block">
+        <h5>Second slide label</h5>
+        <p>Some representative placeholder content for the second slide.</p>
+      </div>
+    </div>
+    <div className="carousel-item">
+      <img src="https://cdn.xxl.thumbs.canstockphoto.com/property-mark-on-hand-with-blue-background-stock-photograph_csp29643092.jpg" className="d-block w-100" alt="..." />
+      <div className="carousel-caption d-none d-md-block">
+        <h5>Third slide label</h5>
+        <p>Some representative placeholder content for the third slide.</p>
+      </div>
+    </div>
+  </div>
+  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Previous</span>
+  </button>
+  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span className="carousel-control-next-icon" aria-hidden="true"></span>
+    <span className="visually-hidden">Next</span>
+  </button>
+</div>
+
   );
 };
 
