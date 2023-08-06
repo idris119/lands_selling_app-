@@ -26,7 +26,7 @@ const Vehicles = () => {
   }, []);
   
   return (
-    <div className="d-flex justify-content-center" style={{ marginTop: '120px',marginBottom: '20px' }}>
+    <div style={{ paddingTop: '20px', paddingLeft: '20px', paddingRight: '20px' }}>
       <h1>Vehicle List</h1>
       {loading ? (
         <p>Loading...</p>
