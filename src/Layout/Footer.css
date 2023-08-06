@@ -1,33 +1,54 @@
-/* Footer.css */
+/* Footer container */
 .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
-
-.footer-content {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #28a745;
+  }
+  
+  /* Flexbox container for content */
+  .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.company-motto {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.contacts {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-.social-link {
-    color: #fff;
-    text-decoration: none;
+  }
+  
+  /* Centered company motto */
+  .company-motto {
+    color: #1b36ad;
+    text-align: center;
+  }
+  
+  /* Left side of the footer */
+  .footer-left {
+    text-align: left;
+  }
+  
+  /* Right side of the footer */
+  .footer-right {
+    text-align: right;
+  }
+  
+  /* Social media links */
+  .social-link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #ffffff;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
     margin-right: 10px;
-}
-
-.social-link:hover {
-    text-decoration: underline;
-}
+  }
+  
+  /* Contacts */
+  .contacts {
+    color: #ffffff;
+  }
+  
+  /* Additional styles as needed */
+  
