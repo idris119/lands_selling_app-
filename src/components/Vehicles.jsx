@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './vehicles.css'
 
 const Vehicles = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -26,7 +27,7 @@ const Vehicles = () => {
   }, []);
   
   return (
-    <div style={{ paddingTop: '20px', paddingLeft: '20px', paddingRight: '20px' }}>
+    <div className="d-flex justify-content-center" style={{ marginTop: '120px', marginBottom: '20px' }}>
       <h1>Vehicle List</h1>
       {loading ? (
         <p>Loading...</p>
@@ -42,7 +43,15 @@ const Vehicles = () => {
               <p>Colour: {vehicle.colour}</p>
               <p>Capacity: {vehicle.capacity}</p>
               <p>Price: {vehicle.price}</p>
-              <p>Image: {vehicle.image}</p>
+              
+              {/* Display the image if available */}
+              {vehicle.image && (
+                <div>
+                  <p>Image:</p>
+                  <img src={vehicle.image} alt={`Vehicle ${vehicle.id}`} style={{ maxWidth: '200px' }} />
+                </div>
+              )}
+
               <p>Is Approved: {vehicle.is_approved ? 'Yes' : 'No'}</p>
             </li>
           ))}

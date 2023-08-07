@@ -17,8 +17,12 @@ export default function Profile() {
         <h6>{current_user && current_user.email}</h6>
       </div>
       <div>
-        <p>Username:</p>
-        <h6>{current_user && current_user.username}</h6>
+        <p>name:</p>
+        <h6>{current_user && current_user.name}</h6>
+      </div>
+      <div>
+        <p>phone number:</p>
+        <h6>{current_user && current_user.phone_number}</h6>
       </div>
       <div>
         <p>Joined on:</p>
