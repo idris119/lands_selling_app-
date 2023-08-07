@@ -132,7 +132,7 @@ export default function AuthProvider({children})
             setCurrentUser(response)
             console.log("current user ",response)
         })
-    }, [onChange])
+    }, [])
 
     const contextData ={
         login, 

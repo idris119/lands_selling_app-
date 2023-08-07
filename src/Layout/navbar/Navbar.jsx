@@ -1,21 +1,29 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/authcontext';
 
 export default function Navbar() {
+    const {currentUser, logout} = useContext(AuthContext)  
+    console.log("user from navbar,");
+
     return (
         <div>
-            <nav className="navbar navbar-expand-lg bg-success mt-0 fixed-top justify-content-between">
+            <nav className="navbar navbar-expand-lg bg-success mt-0 fixed-top" style={{ height: '85px' }}>
                 <div className="container" style={{marginLeft: '-20px' }}>
                     <a className="navbar-brand fw-bolder text-white"  href="/"><h2>Property Sale</h2></a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
+                    <div className='container' style={{marginRight: '-500px' }}>
                     <div className="collapse navbar-collapse ms-auto" id="navbarSupportedContent">
                         <ul className="navbar-nav ms-auto mb-2 mb-lg-0" >
 
                             <li className="nav-item">
                                 <Link to="/" className="nav-link active text-white fw-bolder" aria-current="page">Home</Link>
                             </li>
+
+                            {currentUser && currentUser.name?(
+                                <>
                             <li className="nav-item dropdown">
                                 <Link
                                     to="#"
@@ -54,6 +62,15 @@ export default function Navbar() {
                             <li className="nav-item">
                                 <Link to="/Aboutus" className="nav-link active text-white fw-bolder">About us</Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/Profile" className="nav-link active text-white fw-bolder">Profile</Link>
+                            </li>
+                            </>)
+
+                            :
+
+                            <>
+
                             <li className="nav-item dropdown">
                                 <Link
                                     to="#"
@@ -73,14 +90,13 @@ export default function Navbar() {
                                     </li>
                                 </ul>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/Profile" className="nav-link active text-white fw-bolder">Profile</Link>
-                            </li>
+                            </>
+                            }
                         </ul>
+                    </div>
                     </div>
                 </div>
             </nav>
         </div>
     );
 }
-
