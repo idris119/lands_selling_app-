@@ -7,7 +7,7 @@ export default function Profile() {
   return (
     <div>
       <h2>
-        Hello <span>{current_user && current_user.username}</span>
+        Hello <span>{current_user && current_user.name}</span>
       </h2>
       <i></i>
       <h3>Information</h3>
