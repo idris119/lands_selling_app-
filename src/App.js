@@ -16,13 +16,11 @@ import Lands from './components/Lands';
 import Login from './components/Login';
 import Register from './components/Signup';
 import Profile from './components/Profile';
+
 function App() {
-  return (
-    
+  return (    
     <Router>
       <AuthProvider>
-
-
       <div>
         <Navbar />
         <Routes>
@@ -39,10 +37,8 @@ function App() {
           <Route path='/Properties' element={<Properties />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Register />} />
-          <Route path='/Profile' element={< Profile />} />
-
-
-        
+          <Route path='/Profile' element={< Profile />} />   
+          {/* <Route path="/houses/:houseId" element={<HouseDetails houses={Houses} />} />      */}
         </Routes>
         <Footer/>
       </div>

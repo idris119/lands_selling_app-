@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import Link and useNavigate
 
 
 const Addproperty = () => {
@@ -25,34 +26,119 @@ const Addproperty = () => {
     is_approved: false,
   });
 
+  const navigate = useNavigate(); // Initialize the useNavigate hook
+
+
   const handlePropertyTypeChange = (e) => {
     setSelectedPropertyType(e.target.value);
-    setFormData({}); // Reset form data when property type changes
+    setFormData({ ...formData, vehicle_type: '', make: '', model: '', colour: '', capacity: '' });
   };
 
   const handleFormChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
+    setFormData({ ...formData, [name]: newValue });
   };
 
-
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    // Here you can handle the form submission based on the selectedPropertyType
-    if (selectedPropertyType === 'vehicles') {
-      console.log('Adding Vehicle:', formData);
-      // Add logic to submit vehicle data to the server or perform other actions
-    } else if (selectedPropertyType === 'lands') {
-      console.log('Adding Land:', formData);
-      // Add logic to submit land data to the server or perform other actions
-    } else if (selectedPropertyType === 'houses') {
-      console.log('Adding House:', formData);
-      // Add logic to submit house data to the server or perform other actions
+ 
+  const fetchApprovalData = async (approvalEndpoint) => {
+    const newDataResponse = await fetch(approvalEndpoint);
+    if (!newDataResponse.ok) {
+      throw new Error('Error fetching data for approval');
     }
-    // Optionally, you can clear the form fields after submission
-    setFormData({});
 
-     // Redirect to the "Properties" page after successful submission
+ const newData = await newDataResponse.json();
+  
+  // Make sure each property object in the data array has all the expected attributes
+  const formattedData = newData.map((property) => ({
+    ...property,
+    location: property.location || '',
+    size: property.size || '',
+    price: property.price || '',
+    bedrooms: property.bedrooms || '',
+    bathrooms: property.bathrooms || '',
+    amenities: property.amenities || '',
+    images: property.images || '',
+    distance: property.distance || '',
+    description: property.description || '',
+    image: property.image || '',
+    proximity_to_road: property.proximity_to_road || '',
+    messaging: property.messaging || false,
+    name: property.name || '',
+    vehicle_type: property.vehicle_type || '',
+    make: property.make || '',
+    model: property.model || '',
+    colour: property.colour || '',
+    capacity: property.capacity || '',
+    is_approved: property.is_approved || false,
+  }));
+
+  return formattedData;
+};
+
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      let response;
+
+      if (selectedPropertyType === 'vehicles') {
+        response = await fetch('/vehicles', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (!response.ok) {
+          throw new Error('Error adding vehicle');
+        }
+      } else if (selectedPropertyType === 'lands') {
+        response = await fetch('/lands', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (!response.ok) {
+          throw new Error('Error adding land');
+        }
+      } else if (selectedPropertyType === 'houses') {
+        response = await fetch('/houses', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (!response.ok) {
+          throw new Error('Error adding house');
+        }
+      }
+
+      let approvalEndpoint = '';
+
+      if (selectedPropertyType === 'vehicles') {
+        approvalEndpoint = '/vehiclesneedingapproval';
+      } else if (selectedPropertyType === 'lands') {
+        approvalEndpoint = '/landsneedingapproval';
+      } else if (selectedPropertyType === 'houses') {
+        approvalEndpoint = '/housesneedingapproval';
+      }
+
+      const newData = await fetchApprovalData(approvalEndpoint);
+
+      navigate('/approve-property', {
+        state: { propertyData: { propertyType: selectedPropertyType, formData: newData } },
+      });
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (
@@ -152,13 +238,13 @@ const Addproperty = () => {
       </div>
 
       <div className="mb-3">
-        <label htmlFor="images" className="form-label">Images:</label>
+        <label htmlFor="image" className="form-label">Image:</label>
         <input
           type="text"
           className="form-control"
-          id="images"
-          name="images"
-          value={formData.images}
+          id="image"
+          name="image"
+          value={formData.image}
           onChange={handleFormChange}
         />
       </div>
@@ -185,30 +271,6 @@ const Addproperty = () => {
           value={formData.description}
           onChange={handleFormChange}
         />
-      </div>
-
-      <div className="mb-3">
-        <label htmlFor="image" className="form-label">Image:</label>
-        <input
-          type="text"
-          className="form-control"
-          id="image"
-          name="image"
-          value={formData.image}
-          onChange={handleFormChange}
-        />
-      </div>
-
-      <div className="mb-3 form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          id="is_approved"
-          name="is_approved"
-          checked={formData.is_approved}
-          onChange={handleFormChange}
-        />
-        <label htmlFor="is_approved" className="form-check-label">Is Approved:</label>
       </div>
     </div>
   </div>
@@ -323,18 +385,6 @@ const Addproperty = () => {
       />
       <label htmlFor="messaging" className="form-check-label">Messaging:</label>
     </div>
-
-    <div className="mb-3 form-check">
-      <input
-        type="checkbox"
-        className="form-check-input"
-        id="is_approved"
-        name="is_approved"
-        checked={formData.is_approved}
-        onChange={handleFormChange}
-      />
-      <label htmlFor="is_approved" className="form-check-label">Is Approved:</label>
-    </div>
        </div>
         )}
 {selectedPropertyType === 'vehicles' && (
@@ -422,21 +472,11 @@ const Addproperty = () => {
         onChange={handleFormChange}
       />
     </div>
-
-    <div className="mb-3 form-check">
-      <input
-        type="checkbox"
-        className="form-check-input"
-        id="is_approved"
-        name="is_approved"
-        checked={formData.is_approved}
-        onChange={handleFormChange}
-      />
-      <label htmlFor="is_approved" className="form-check-label">Is Approved:</label>
-    </div>
   </div>
 )}
-  <button type="submit" className="btn btn-primary d-block mx-auto mt-3">Add Property</button>
+  <button type="submit" className="btn btn-primary d-block mx-auto mt-3">
+          Add Property
+        </button>
       </form>
     </div>
   );

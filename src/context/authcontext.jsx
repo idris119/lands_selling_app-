@@ -36,6 +36,8 @@ export default function AuthProvider({children})
                     'success'
                   )
                   setonChange(!onChange)
+
+
             }
             else{
                 Swal.fire(
@@ -55,7 +57,7 @@ export default function AuthProvider({children})
                })
        .then((res)=>res.json())
        .then((response)=>{
-        setCurrentUser()
+        setCurrentUser(null)
         setonChange(!onChange)
         console.log(response)
         if(response.error)
@@ -126,13 +128,18 @@ export default function AuthProvider({children})
 
     useEffect(()=>{
         console.log("Fetching current user data")
-        fetch("/current_user")
-        .then((res)=>res.json())
-        .then((response)=>{
+        fetch("/current_user",{
+            method: "GET"
+        })
+        .then(res=>res.json())
+        .then(response=>{
             setCurrentUser(response)
             console.log("current user ",response)
         })
-    }, [])
+        .catch((error) => {
+            console.error("Error fetching current user data:", error);
+        });    
+    }, [onChange])
 
     const contextData ={
         login, 

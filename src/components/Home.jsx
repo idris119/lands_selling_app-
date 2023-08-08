@@ -1,58 +1,42 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const HomePage = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const images = [
+    'https://hips.hearstapps.com/hmg-prod/images/sportscars100k-1588775921.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*',
+    'https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    'https://images.pexels.com/photos/2962775/pexels-photo-2962775.jpeg?auto=compress&cs=tinysrgb&w=1600',
+    'https://media.gettyimages.com/id/1284622508/photo/suv-cars-on-a-parking.jpg?s=612x612&w=0&k=20&c=S1Pz5_HRncc1vH6Wr4XCb1ols9Mhy5KAYFgX-b_WOb0=',
+    'https://i.roamcdn.net/prop/brk/listing-medium-600w-watermark/ba9e622f835e8d921c4661a63714f424/-/prod-property-core-backend-media-brk/5478521/788ea7a5-752a-4991-8569-be9d3d0df499.jpg',
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <div id="carouselExampleCaptions" className="carousel slide">
-  <div className="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-  </div>
-  <div className="carousel-inner">
-    <div className="carousel-item active">
-      <img src="https://cdn.xxl.thumbs.canstockphoto.com/property-mark-on-hand-with-blue-background-stock-photograph_csp29643092.jpg"
-       className="d-block w-100"
-        alt="..."
-        style={{ maxWidth: "100%", height: "700px" }}
-         />
-      <div className="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Some representative placeholder content for the first slide.</p>
+      {/* ... (carousel indicators, items, and controls) ... */}
+      <div className="carousel-inner">
+        {images.map((image, index) => (
+          <div key={index} className={`carousel-item ${index === activeIndex ? 'active' : ''}`}>
+            <img
+              src={image}
+              className="d-block w-100"
+              alt={`Slide ${index + 1}`}
+              style={{ maxWidth: '100%', height: '700px' }}
+            />
+            {/* ... (carousel caption) ... */}
+          </div>
+        ))}
       </div>
+      {/* ... (carousel controls) ... */}
     </div>
-    <div className="carousel-item">
-      <img src="https://cdn.xxl.thumbs.canstockphoto.com/property-mark-on-hand-with-blue-background-stock-photograph_csp29643092.jpg"
-      className="d-block w-100" 
-      alt="..." 
-      style={{ maxWidth: "100%", height: "700px" }}      
-      />
-      <div className="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Some representative placeholder content for the second slide.</p>
-      </div>
-    </div>
-    <div className="carousel-item">
-      <img src="https://cdn.xxl.thumbs.canstockphoto.com/property-mark-on-hand-with-blue-background-stock-photograph_csp29643092.jpg" 
-      className="d-block w-100" 
-      alt="..."         
-      style={{ maxWidth: "100%", height: "700px" }}
-      />
-      <div className="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Some representative placeholder content for the third slide.</p>
-      </div>
-    </div>
-  </div>
-  <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Previous</span>
-  </button>
-  <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Next</span>
-  </button>
-</div>
-
   );
 };
 

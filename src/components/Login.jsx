@@ -62,7 +62,7 @@ function Login() {
             </form>
             <div className="my-5">
               Doesn't have an account?{' '}
-              <Link className="ml-4" to="/Register">
+              <Link className="ml-4" to="/Signup">
                 Signup
               </Link>
             </div>

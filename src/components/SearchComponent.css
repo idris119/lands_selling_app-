@@ -1,0 +1,115 @@
+/* Main Container */
+.search-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #65c5eb;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Form Groups */
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Labels */
+  .form-group label {
+    display: block;
+    margin-top: 4%;
+    margin-bottom: 5px;
+    margin-left: 25%;
+    font-weight: bolder;
+    font-size: large;
+    color: red;
+  }
+  
+  /* Form Inputs */
+  .input-field,
+  .select-field {
+    width: 50%;
+    margin-top: 0.25%;
+    padding: 8px;
+    margin-left: 25%;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  
+  /* Button */
+  .button-container {
+    text-align: center;
+    margin-top: 15px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  /* Results Container */
+  .results-container {
+    margin-top: 20px;
+  }
+  
+  /* Result List */
+  .result-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .result-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* Result Headers */
+  .results-header {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #1114f3;
+  }
+  
+  /* Specific Headers */
+  h3 {
+    font-size: 16px;
+    color: #0b3fec;
+    margin-top: 20px;
+  }
+  
+  /* Scrollable List */
+  .scrollable-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+  }
+  .lands-bg {
+    background-image: url('https://i.roamcdn.net/prop/brk/listing-medium-600w-watermark/1e6d37b029944d559900ac8539ea3fa0/-/prod-property-core-backend-media-brk/5478514/e72134e9-2120-4af6-ab9d-d4f27190b3e7.jpg');
+    background-size: cover;
+    filter:brightness(90%);
+    background-position: center;
+  }
+  
+  .houses-bg {
+    background-image: url('https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    filter:brightness(90%);
+    background-position: center;
+  }
+  
+  .vehicles-bg {
+    background-image: url('https://hips.hearstapps.com/hmg-prod/images/sportscars100k-1588775921.jpg?crop=1.00xw:1.00xh;0,0&resize=1200:*');
+    background-size: cover;
+    filter:brightness(90%);
+    background-position: center;
+  }
