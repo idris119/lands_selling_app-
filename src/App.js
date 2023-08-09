@@ -29,7 +29,7 @@ function App() {
           <Route path="/SearchComponent" element={<SearchComponent />} />
           <Route path="/Payment" element={<Payment />} />
           <Route path="/Addproperty" element={<Addproperty />} />
-          <Route path="/Approveproperties" element={<Approveproperties />} />
+          <Route path="/approve-propertY" element={<Approveproperties />} />
           <Route path="/Aboutus" element={<Aboutus />} />
           <Route path='/Vehicles' element={<Vehicles />} />
           <Route path='/Houses' element={<Houses />} />

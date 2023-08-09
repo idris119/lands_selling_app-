@@ -42,13 +42,14 @@ const Addproperty = () => {
 
  
   const fetchApprovalData = async (approvalEndpoint) => {
-    const newDataResponse = await fetch(approvalEndpoint);
-    if (!newDataResponse.ok) {
-      throw new Error('Error fetching data for approval');
-    }
+    try {
+      const newDataResponse = await fetch(approvalEndpoint);
+      if (!newDataResponse.ok) {
+        throw new Error('Error fetching data for approval');
+      }
 
- const newData = await newDataResponse.json();
-  
+      const newData = await newDataResponse.json();
+
   // Make sure each property object in the data array has all the expected attributes
   const formattedData = newData.map((property) => ({
     ...property,
@@ -73,9 +74,12 @@ const Addproperty = () => {
     is_approved: property.is_approved || false,
   }));
 
-  return formattedData;
-};
-
+  return newData;
+    } catch (error) {
+      console.error('Error fetching approval data:', error);
+      return [];
+    }
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
