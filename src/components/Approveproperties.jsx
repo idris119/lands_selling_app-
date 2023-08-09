@@ -13,6 +13,20 @@ const ApproveProperties = () => {
     setProperties(propertyList);
   }, [propertyData]);
 
+  const approveProperty = (index) => {
+    // Assuming you have an API endpoint to update the approval status of a property
+    const propertyToUpdate = properties[index];
+    // Perform the API call to update the approval status of the property
+
+    // Update the state to remove the approved property from the list
+    const updatedProperties = [...properties];
+    updatedProperties.splice(index, 1);
+    setProperties(updatedProperties);
+  };
+
+  
+  
+
   return (
     <div className="container mt-5">
       <h1 className="text-center">Properties Awaiting Approval</h1>
@@ -39,6 +53,14 @@ const ApproveProperties = () => {
                 {property.colour && <p className="card-text">Colour: {property.colour}</p>}
                 {property.capacity && <p className="card-text">Capacity: {property.capacity}</p>}
                 <p className="card-text">Location: {property.location}</p>
+              </div>
+              <div className="card-footer">
+                <button
+                  className="btn btn-success"
+                  onClick={() => approveProperty(index)}
+                >
+                  Approve
+                </button>
               </div>
             </div>
           </div>
