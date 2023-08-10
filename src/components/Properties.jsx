@@ -10,9 +10,21 @@ const Properties = () => {
     houses: [],  
     lands: [],   
   }); 
+  const [selectedProperty, setSelectedProperty] = useState(null); // State to hold the selected property
 
   const handleSelectChange = (event) => {
     setSelectedOption(event.target.value);
+    setSelectedProperty(null); // Clear selected property when a new option is selected
+  };
+
+  const handlePropertyClick = (property) => {
+    setSelectedProperty(property);
+  };
+
+  const handleBuyClick = () => {
+    // Implement the logic to handle the "Buy" button click here
+    // You can use the selectedProperty to perform the necessary action
+    console.log('Buy button clicked for property:', selectedProperty);
   };
 
   const renderSelectedOption = () => {
@@ -45,6 +57,18 @@ const Properties = () => {
         <option value="land">Lands</option>
       </select>
       {renderSelectedOption()}
+
+       {/* Display detailed property information */}
+       {selectedProperty && (
+        <div>
+          <h2>Property Details</h2>
+          {/* Display property details */}
+          <div>
+            {/* ... (display selectedProperty details) */}
+            <button onClick={handleBuyClick}>Buy</button>
+          </div>
+        </div>
+      )}
 
       {/* Display all properties */}
       <div>

@@ -64,7 +64,36 @@ const ApproveProperties = () => {
     }
   };
 
-  
+
+  const handleDecline = async (propertyId, propertyType) => {
+    try {
+      let endpoint;
+      if (propertyType === 'land') {
+        endpoint = `/lands/${propertyId}`;
+      } else if (propertyType === 'house') {
+        endpoint = `/houses/${propertyId}`;
+      } else if (propertyType === 'vehicle') {
+        endpoint = `/vehicles/${propertyId}`;
+      }
+
+      console.log('Declining property:', endpoint); // Debug log
+
+      const response = await fetch(endpoint, {
+        method: 'DELETE',
+      });
+
+      console.log('Response:', response); // Debug log
+
+      if (response.ok) {
+        // Update the UI to remove the declined property from the list
+        setProperties(properties.filter(property => property.id !== propertyId));
+      } else {
+        console.error('Error declining property:', response.status);
+      }
+    } catch (error) {
+      console.error('Error declining property:', error);
+    }
+  }; 
 
   return (
     <div className="d-flex justify-content-center" style={{ marginTop: '40px' }}>
@@ -95,16 +124,24 @@ const ApproveProperties = () => {
     <p className="card-text">Location: {property.location}</p>
     </div>
     <div className="card-footer">
-  {property.approved ? (
-    <p className="text-success">Approved</p>
-  ) : (
-    <button
-    onClick={() => handleApprove(property.id, property.propertyType)}
-    className="btn btn-primary"
-  >
-    Approve
-  </button>
-  )}
+      {property.approved ? (
+        <p className="text-success">Approved</p>
+      ) : (
+        <div>
+          <button
+            onClick={() => handleApprove(property.id, property.propertyType)}
+            className="btn btn-primary mr-2"
+          >
+            Approve
+          </button>
+          <button
+            onClick={() => handleDecline(property.id, property.propertyType)}
+            className="btn btn-danger"
+          >
+            Decline
+          </button>
+        </div>
+      )}
 </div>
 
     </div>

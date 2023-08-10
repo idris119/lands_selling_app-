@@ -34,6 +34,7 @@
 // };
 
 // export default Payment;
+
 import React, { useState } from "react";
 import { useParams } from 'react-router-dom';
 import './Payment.css';
