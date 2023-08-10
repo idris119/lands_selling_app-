@@ -1,76 +1,83 @@
-/* LandsList.css */
-
+/* Container */
 /* Container */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Title */
-  .title {
-    font-size: 32px;
-    font-weight: bold;
-    color: #3498db; /* Blue */
-    margin-bottom: 20px;
-  }
-  
-  /* Land Card */
-  .land-card {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #f5f5f5;
-  }
-  
-  /* Land Name */
-  .land-name {
-    font-size: 24px;
-    font-weight: bold;
-    color: #27ae60; /* Green */
-  }
-  
-  /* Land Location */
-  .land-location {
-    color: #e67e22; /* Orange */
-  }
-  
-  /* Land Price */
-  .land-price {
-    color: #c0392b; /* Red */
-  }
-  
-  /* Additional Details */
-  .land-size {
-    color: #9b59b6; /* Purple */
-  }
-  
-  /* Land Description */
-  .land-description {
-    color: #34495e; /* Dark Blue */
-  }
-  
-  /* Land Approval Status */
-  .land-approval-status {
-    font-size: 16px;
-    font-weight: bold;
-    color: #27ae60; /* Green */
-  }
-  
-  /* Approve Button */
-  button {
-    background-color: #27ae60; /* Green */
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    font-size: 14px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-right: 10px;
-  }
-  
-  /* Delete Button */
-  button.delete-btn {
-    background-color: #c0392b; /* Red */
-  }
-  
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+/* Title */
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 20px;
+  margin-top: 60px;
+}
+
+/* Land Grid */
+.lands-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Two columns per row */
+  grid-gap: 20px; /* Space between land cards */
+}
+
+/* Land Card */
+.land-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #f5f5f5;
+  width: 350px; /* Increase width as desired */
+}
+
+/* Land Name */
+.land-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* Land Location */
+.land-location {
+  color: #e67e22;
+}
+
+/* Land Price */
+.land-price {
+  color: #c0392b;
+}
+
+/* Additional Details */
+.land-size {
+  color: #9b59b6;
+}
+
+/* Land Description */
+.land-description {
+  color: #34495e;
+}
+
+/* Land Approval Status */
+.land-approval-status {
+  font-size: 16px;
+  font-weight: bold;
+  color: #27ae60;
+}
+
+/* Approve Button */
+button {
+  background-color: #27ae60;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+/* Delete Button */
+button.delete-btn {
+  background-color: #c0392b;
+}

@@ -1,0 +1,82 @@
+/* Container */
+.house-list-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  /* Title */
+  .house-list-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #3498db; /* Blue */
+    margin-top: 60px;
+  }
+  
+  /* House List */
+  .house-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  /* House Item */
+  .house-item {
+    width: calc(33.33% - 20px); /* 33.33% width minus 20px for spacing */
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    background-color: #f5f5f5; /* Light gray */
+  }
+  
+  /* House Image Container */
+  .house-image {
+    margin-top: 10px;
+  }
+  
+  /* House Image Preview */
+  .house-image-preview {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* House Details */
+  .house-location {
+    color: #27ae60; /* Green */
+  }
+  
+  .house-size {
+    color: #e67e22; /* Orange */
+  }
+  
+  .house-price {
+    color: #3498db; /* Blue */
+  }
+  
+  .house-bedrooms {
+    color: #9b59b6; /* Purple */
+  }
+  
+  .house-bathrooms {
+    color: #c0392b; /* Red */
+  }
+  
+  .house-amenities {
+    color: #27ae60; /* Green */
+  }
+  
+  .house-distance {
+    color: #e67e22; /* Orange */
+  }
+  
+  .house-description {
+    color: #34495e; /* Dark Blue */
+  }
+  
+  .house-approved {
+    font-weight: bold;
+  }
