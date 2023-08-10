@@ -1,4 +1,5 @@
-// import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import './Houses.css'; // Import your CSS stylesheet
 
 // const Houses = () => {
 //   const [houses, setHouses] = useState([]);
