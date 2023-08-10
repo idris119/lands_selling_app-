@@ -7,7 +7,7 @@ export const  AuthContext = createContext()
 export default function AuthProvider({children}) 
 {
     const nav = useNavigate()
-    const [current_user, setCurrentUser] = useState([])
+    const [currentuser, setCurrentUser] = useState([])
     const [onChange, setonChange] = useState(true)
     // Login
     const login = (email, password) =>{
@@ -145,7 +145,7 @@ export default function AuthProvider({children})
         login, 
         register,
         logout,
-        current_user
+        currentuser
     }
 
   return (

@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/authcontext';
 
 export default function Navbar() {
-    const { current_User } = useContext(AuthContext);
-    console.log("user from navbar", current_User);
+    const { currentuser } = useContext(AuthContext);
+    console.log("user from navbar", currentuser);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
@@ -37,6 +37,8 @@ export default function Navbar() {
                                 </li>
                             </ul>
                         </li>
+                        { currentuser ? 
+                        <>
                         <li className="nav-item dropdown">
                             <Link
                                 to="#"
@@ -77,6 +79,8 @@ export default function Navbar() {
     <li className="nav-item">
         <Link to="/Profile" className="nav-link">Profile</Link>
     </li>
+    </>
+    : null}
 </ul>
 
 
