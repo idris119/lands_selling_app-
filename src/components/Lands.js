@@ -22,30 +22,35 @@ function Lands() {
   };
 
   return (
+    <div className="d-flex justify-content-center" style={{ marginTop: '20px' }}>
+
     <div className="container">
-      <h1 className="title">List of Lands</h1>
-      {lands.map((land) => (
-        <div key={land.id} className="land-card">
-          <h2 className="land-name">{land.name}</h2>
-          <p className="land-location">Location: {land.location}</p>
-          <p className="land-price">Price: {land.price}</p>
-          {/* Additional Details */}
-          <p className="land-size">Size: {land.size}</p>
-          <p className="land-description">Description: {land.description}</p>
-          
-          {/* Display the image if available */}
-          {land.image && (
-            <div className="land-image">
-              <img src={land.image} alt={`Land ${land.id}`} />
-            </div>
-          )}
-          
-          <p className="land-amenities">Amenities: {land.amenities}</p>
-          <p className="land-proximity">Proximity to Road: {land.proximity_to_road}</p>
-          <p className="land-messaging">Messaging: {land.messaging ? 'Yes' : 'No'}</p>
-          <p className="land-approved">Is Approved: {land.is_approved ? 'Yes' : 'No'}</p>
-        </div>
-      ))}
+      <h1 className="title">Lands</h1>
+      <div className="lands-grid">
+        {lands.map((land) => (
+          <div key={land.id} className="land-card">
+            <h2 className="land-name">{land.name}</h2>
+            <p className="land-location">Location: {land.location}</p>
+            <p className="land-price">Price: {land.price}</p>
+            {/* Additional Details */}
+            <p className="land-size">Size: {land.size}</p>
+            <p className="land-description">Description: {land.description}</p>
+            
+            {/* Display the image if available */}
+            {land.image && (
+              <div className="land-image">
+                <img src={land.image} alt={`Land ${land.id}`} />
+              </div>
+            )}
+            
+            <p className="land-amenities">Amenities: {land.amenities}</p>
+            <p className="land-proximity">Proximity to Road: {land.proximity_to_road}</p>
+            <p className="land-messaging">Messaging: {land.messaging ? 'Yes' : 'No'}</p>
+            <p className="land-approved">Is Approved: {land.is_approved ? 'Yes' : 'No'}</p>
+          </div>
+        ))}
+      </div>
+    </div>
     </div>
   );
 }

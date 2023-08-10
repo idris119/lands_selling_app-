@@ -1,5 +1,5 @@
 /* Container */
-.vehicle-list-container {
+.house-list-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,20 +7,15 @@
   }
   
   /* Title */
-  .vehicle-list-title {
+  .house-list-title {
     font-size: 32px;
     font-weight: bold;
     color: #3498db; /* Blue */
-    margin-top: 1px;
+    margin-top: 60px;
   }
   
-  /* Error Message */
-  .error-message {
-    color: #c0392b; /* Red */
-  }
-  
-  /* Vehicle List */
-  .vehicle-list {
+  /* House List */
+  .house-list {
     list-style: none;
     padding: 0;
     display: flex;
@@ -28,9 +23,9 @@
     justify-content: space-between;
   }
   
-  /* Vehicle Item */
-  .vehicle-item {
-    width: calc(30% - 20px); /* 30% width minus 20px for spacing */
+  /* House Item */
+  .house-item {
+    width: calc(33.33% - 20px); /* 33.33% width minus 20px for spacing */
     margin-bottom: 20px;
     padding: 20px;
     border: 1px solid #ccc;
@@ -38,43 +33,51 @@
     background-color: #f5f5f5; /* Light gray */
   }
   
-  /* Vehicle Image Container */
-  .vehicle-image {
+  /* House Image Container */
+  .house-image {
     margin-top: 10px;
   }
   
-  /* Vehicle Image Preview */
-  .vehicle-image-preview {
+  /* House Image Preview */
+  .house-image-preview {
     max-width: 100%;
     height: auto;
   }
   
-  /* Vehicle Details */
-  .vehicle-type {
+  /* House Details */
+  .house-location {
     color: #27ae60; /* Green */
   }
   
-  .vehicle-make {
+  .house-size {
     color: #e67e22; /* Orange */
   }
   
-  .vehicle-model {
+  .house-price {
     color: #3498db; /* Blue */
   }
   
-  .vehicle-colour {
+  .house-bedrooms {
     color: #9b59b6; /* Purple */
   }
   
-  .vehicle-capacity {
+  .house-bathrooms {
     color: #c0392b; /* Red */
   }
   
-  .vehicle-price {
+  .house-amenities {
     color: #27ae60; /* Green */
   }
   
-  .vehicle-approved {
+  .house-distance {
+    color: #e67e22; /* Orange */
+  }
+  
+  .house-description {
+    color: #34495e; /* Dark Blue */
+  }
+  
+  .house-approved {
     font-weight: bold;
   }
   
