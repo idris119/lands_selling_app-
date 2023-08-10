@@ -1,0 +1,36 @@
+.add-property-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out;
+    animation: backgroundAnimation 45s infinite; /* Animation for background change */
+  }
+  
+  @keyframes backgroundAnimation {
+    0%, 100% {
+      background-image: url('https://media.istockphoto.com/id/1416166526/photo/businessman-using-laptop-to-search-planning-and-investing-in-real-estate-property-management.webp?b=1&s=170667a&w=0&k=20&c=N-TTs4EXo4oqMeOd_4XFxM-_9jehteKCfdhZVDxnf6U=');
+    }
+    33.33% {
+      background-image: url('https://media.istockphoto.com/id/136232360/photo/acres-for-sale.webp?b=1&s=170667a&w=0&k=20&c=VXKyPmOyVdKplNX7MFw_sgfzv-dVQ6pB3zqqJm1MSNM=');
+    }
+    66.66% {
+      background-image: url('https://www.copart.com/content/us/en/images/used-cars.jpg');
+    }
+  }
+  
+  .vehicles-bg {
+    background-image: url('https://www.copart.com/content/us/en/images/used-cars.jpg');
+  }
+  
+  .lands-bg {
+    background-image: url('https://media.istockphoto.com/id/136232360/photo/acres-for-sale.webp?b=1&s=170667a&w=0&k=20&c=VXKyPmOyVdKplNX7MFw_sgfzv-dVQ6pB3zqqJm1MSNM=');
+  }
+  
+  .houses-bg {
+    background-image: url('https://media.istockphoto.com/id/1416166526/photo/businessman-using-laptop-to-search-planning-and-investing-in-real-estate-property-management.webp?b=1&s=170667a&w=0&k=20&c=N-TTs4EXo4oqMeOd_4XFxM-_9jehteKCfdhZVDxnf6U=');
+  }
+  

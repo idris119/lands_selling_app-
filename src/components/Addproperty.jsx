@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Addproperty.css';
 
 const Addproperty = () => {
 const [selectedPropertyType, setSelectedPropertyType] = useState('');
@@ -110,9 +111,8 @@ throw new Error('Error adding house');
 
 
 return (
-<div className="d-flex justify-content-center" style={{ marginTop: '40px' }}>
-
-<div className="container mb-4 mt-5 pb-5" style={{ paddingBottom: '80px' }}> {/* Add padding to the bottom of the container */}
+<div className={`add-property-container ${selectedPropertyType}-bg`}>
+<div className="container mb-4 mt-5 pb-5" style={{ paddingBottom: '80px' }}>
 <h1 className="text-center">Add Property</h1>
 <form onSubmit={handleFormSubmit}>
 <div className="mb-3">
