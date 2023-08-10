@@ -64,6 +64,7 @@
 // export default Vehicles;
 import React, { useState, useEffect } from 'react';
 import './vehicles.css';
+import { Link } from 'react-router-dom'; 
 
 const Vehicles = () => {
   const [vehicles, setVehicles] = useState([]);
@@ -124,6 +125,7 @@ const Vehicles = () => {
               <p className="vehicle-approved">
                 Is Approved: {vehicle.is_approved ? 'Yes' : 'No'}
               </p>
+              <Link to={`/Payment/${vehicle.id}`} className="buy-button">Buy</Link>
             </li>
           ))}
         </ul>

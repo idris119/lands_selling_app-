@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Houses.css'; // Import your CSS stylesheet
+import { Link } from 'react-router-dom';
 
 // const Houses = () => {
 //   const [houses, setHouses] = useState([]);
@@ -48,8 +49,8 @@ import './Houses.css'; // Import your CSS stylesheet
 // };
 
 // export default Houses;
-import React, { useState, useEffect } from 'react';
-import './Houses.css'; // Import your CSS stylesheet
+// import React, { useState, useEffect } from 'react';
+// import './Houses.css'; // Import your CSS stylesheet
 const Houses = () => {
   const [houses, setHouses] = useState([]);
 
@@ -92,6 +93,7 @@ const Houses = () => {
             <p className="house-approved">
               Is Approved: {house.is_approved ? 'Yes' : 'No'}
             </p>
+            <Link to={`/Payment/${house.id}`} className="buy-button">Buy</Link>
           </li>
         ))}
       </ul>

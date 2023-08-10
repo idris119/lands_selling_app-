@@ -1,0 +1,59 @@
+/* Payment.css */
+.payment-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 6rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: alternateBackgrounds 15s infinite; /* Run the animation every 15 seconds */
+  }
+    
+    .form-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .payment-form {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 300px;
+    }
+    
+    .payment-form label {
+      font-weight: bold;
+    }
+    
+    .payment-form input {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .submit-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+    
+    .submit-button:hover {
+      background-color: #0056b3;
+    }
+  
+    @keyframes alternateBackgrounds {
+      0% {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkN-fm-fOXWqN8xDHu84eixd94lxiN7mPJUs9IZpB9Gg&s");
+      }
+      33.33% {
+        background-image: url("https://thumbs.dreamstime.com/b/house-keys-table-set-house-keys-table-100195947.jpg?w=992");
+      }
+      66.66% {
+        background-image: url("https://thumbs.dreamstime.com/b/flat-lay-composition-different-car-keys-light-background-top-view-143178049.jpg?w=768");
+      }
+      100% {
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkN-fm-fOXWqN8xDHu84eixd94lxiN7mPJUs9IZpB9Gg&s");
+      }
+    }
