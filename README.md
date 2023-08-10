@@ -246,8 +246,8 @@ troubleshoot:
   account. Check [this video](https://www.youtube.com/watch?v=bQC5izDzOgE) for
   one possible fix.
 
-  ## License
-  This project is licensed under the MIT License.
+## License
+This project is licensed under the MIT License.
 
 ## Resources
 
