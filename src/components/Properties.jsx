@@ -43,9 +43,34 @@ const Properties = () => {
   // Callback function to add an approved property to the properties list
   const handlePropertyApproved = (property) => {
     const updatedProperties = { ...allProperties };
-    updatedProperties[property.type + 's'] = [...updatedProperties[property.type + 's'], property]; // Plural form
+    if (property.id) {
+      // Update existing property
+      updatedProperties[property.type + 's'] = updatedProperties[
+        property.type + 's'
+      ].map((prop) => (prop.id === property.id ? property : prop));
+    } else {
+      // Add new property
+      updatedProperties[property.type + 's'] = [
+        ...updatedProperties[property.type + 's'],
+        property,
+      ];
+    }
+    setAllProperties(updatedProperties);
+    setSelectedProperty(null); // Clear selected property after update or add
+  };
+  
+  const handlePropertyDelete = (property) => {
+    const updatedProperties = { ...allProperties };
+    updatedProperties[property.type + 's'] = updatedProperties[
+      property.type + 's'
+    ].filter((prop) => prop !== property);
     setAllProperties(updatedProperties);
   };
+  
+  const handlePropertyUpdate = (property) => {
+    setSelectedProperty(property);
+  };
+  
 
   return (
     <div>
@@ -72,14 +97,29 @@ const Properties = () => {
 
       {/* Display all properties */}
       <div>
-        {Object.values(allProperties).flatMap((properties) =>
-          properties.map((property, index) => (
-            <div key={index}>
-              {/* Display property information */}
-            </div>
-          ))
-        )}
+  {Object.values(allProperties).flatMap((properties, typeIndex) =>
+    properties.map((property, propertyIndex) => (
+      <div key={`${typeIndex}-${propertyIndex}`}>
+        {/* Display property information */}
+        {/* ... (display property details) */}
+        
+        {/* Buttons for Delete, Update, and Buy */}
+        <div>
+          <button onClick={() => handlePropertyDelete(property)}>
+            Delete
+          </button>
+          <button onClick={() => handlePropertyUpdate(property)}>
+            Update
+          </button>
+          <button onClick={() => handlePropertyClick(property)}>
+            Buy
+          </button>
+        </div>
       </div>
+    ))
+  )}
+</div>
+
     </div>
   );
 };
