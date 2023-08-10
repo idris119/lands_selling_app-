@@ -38,6 +38,7 @@ function Lands() {
   };
 
   return (
+    
     <div className="d-flex justify-content-center" style={{ marginTop: '20px' }}>
       <div className="container">
         <h1 className="title">Lands</h1>

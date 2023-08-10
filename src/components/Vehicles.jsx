@@ -45,7 +45,7 @@ const Vehicles = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center" style={{ marginTop: '120px', marginBottom: '20px' }}>
+    <div className="d-flex justify-content-center" style={{ marginTop: '20px' }}>
       <div className="vehicle-list-container">
         <h1 className="vehicle-list-title">Vehicles</h1>
         {loading ? (
